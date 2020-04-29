@@ -4,9 +4,9 @@ class Food extends React.Component {
         console.log(this.props);
         let food = this.props.allFood;
         let addFoodElement = food.map(fooditem => {
-            console.log(fooditem);
-            <button>fooditem</button>
-            return fooditem.name;
+            console.log(fooditem.name);
+            let element = <div><button type="button">{fooditem.name}</button></div>
+            return element;
         })
         console.log(addFoodElement)
 
@@ -21,7 +21,7 @@ class Food extends React.Component {
                     <a>Statistics</a>
                     <a>Expiry</a>
                 </nav>
-                <ol>{addFoodElement}</ol>
+                {addFoodElement}
                 <button type="button">Add new food</button>
               </div>
             </body>
