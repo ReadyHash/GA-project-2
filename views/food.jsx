@@ -16,6 +16,7 @@ class Food extends React.Component {
               <div>
                 <h1>This is the Food Page</h1>
                 <ol>{addFoodElement}</ol>
+                <button type="button">Add new food</button>
               </div>
             </body>
         </html>

@@ -51,6 +51,13 @@ app.get('/food', (request, response) => {
 
 })
 
+app.get('/food/add', (request,response) => {
+    response.render('add');
+})
+
+app.post('/food/add', (request, response) => {
+    response.send("food has been added!");
+})
 // Route to show the homepage
 // query and show groceries that are about to expire
 // display picture of recipe
