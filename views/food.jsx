@@ -15,6 +15,12 @@ class Food extends React.Component {
             <body>
               <div>
                 <h1>This is the Food Page</h1>
+                <nav>
+                    <a href="/home">Home</a>
+                    <a href="/food">Food</a>
+                    <a>Statistics</a>
+                    <a>Expiry</a>
+                </nav>
                 <ol>{addFoodElement}</ol>
                 <button type="button">Add new food</button>
               </div>

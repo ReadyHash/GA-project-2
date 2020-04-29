@@ -56,6 +56,7 @@ app.get('/food/add', (request,response) => {
 })
 
 app.post('/food/add', (request, response) => {
+
     response.send("food has been added!");
 })
 // Route to show the homepage
