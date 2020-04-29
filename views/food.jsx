@@ -22,7 +22,9 @@ class Food extends React.Component {
                     <a>Expiry</a>
                 </nav>
                 {addFoodElement}
-                <button type="button">Add new food</button>
+                <form action="/food/add">
+                    <input type="submit" value="Add new food item"/>
+                </form>
               </div>
             </body>
         </html>
