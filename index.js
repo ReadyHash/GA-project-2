@@ -27,7 +27,8 @@ pool.on('error', function (err) {
 // Route to show the list of food
 app.get('/food', (request, response) => {
     // query command to list all foods
-    let foodQuery = "SELECT array( SELECT name FROM food) as foodlist;"
+    // let foodQuery = "SELECT array( SELECT name FROM food) as foodlist;"
+    let foodQuery = "SELECT * FROM food"
     // callback function that runs after query is completed
     let whenDone = (error, result) => {
         // check for any errors
