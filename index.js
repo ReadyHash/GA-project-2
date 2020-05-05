@@ -199,4 +199,6 @@ app.get('/', (request,response) => {
     response.redirect('/home');
 });
 
-app.listen(3000, console.log("app is listening..."));
+const PORT = process.env.PORT || 3000;
+
+const server = app.listen(PORT, () => console.log('~~~ Tuning in to the waves of port '+PORT+' ~~~'));
