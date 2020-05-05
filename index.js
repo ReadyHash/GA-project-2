@@ -56,7 +56,7 @@ pool.on('error', function (err) {
 app.get('/food', (request, response) => {
     // query command to list all foods
     // let foodQuery = "SELECT array( SELECT name FROM food) as foodlist;"
-    let foodQuery = "SELECT * FROM food"
+    let foodQuery = "SELECT * FROM food;"
     // callback function that runs after query is completed
     let whenDone = (error, result) => {
         // check for any errors
@@ -117,8 +117,6 @@ app.get('/food/add', (request,response) => {
             response.render('add', data);
         };
     };
-    console.log("------------------------");
-    console.log("Finding categories")
     pool.query(findCategory,whenFindIsDone);
 
 
@@ -145,12 +143,12 @@ app.post('/food/add/', (request, response) => {
         }else{
 
             response.send("added food!");
-            // check for value array
-            console.log("array value")
-            console.log(value)
-            console.log("result");
-            // show newly added row
-            console.log(result);
+            // // check for value array
+            // console.log("array value")
+            // console.log(value)
+            // console.log("result");
+            // // show newly added row
+            // console.log(result);
         }
     }
     console.log("------------------------");
@@ -174,7 +172,7 @@ app.get('/home',(request, response ) => {
         }else{
             let firstExpiry = result.rows
             console.log("111111111");
-            console.log(result.rows);
+            // console.log(result.rows);
 
             let findSecondExpiry = "SELECT * FROM food WHERE food.expiry between (now() + '1 week' ::interval) and (now() + '2 weeks' ::interval); "
             whenDateIsDone = (error, result) => {
@@ -184,7 +182,7 @@ app.get('/home',(request, response ) => {
                 }else{
                     let secondExpiry = result.rows
                     console.log("222222222");
-                    console.log(result.rows);
+                    // console.log(result.rows);
 
                     let findThirdExpiry = "SELECT * FROM food WHERE food.expiry between (now() + '2 weeks' ::interval) and (now() + '3 weeks' ::interval); "
                     whenDateIsDone = (error, result) => {
@@ -194,7 +192,7 @@ app.get('/home',(request, response ) => {
                         }else{
                             let thirdExpiry = result.rows
                             console.log("333333333");
-                            console.log(result.rows);
+                            // console.log(result.rows);
                             let data = {
                                 red: firstExpiry,
                                 yellow: secondExpiry,

@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS food(
 	mass TEXT,
 	amount INTEGER,
 	price TEXT,
-	expiry DATE (YMD)
+	expiry DATE
 	);
 
 -- Table that user will create
